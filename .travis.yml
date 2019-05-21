@@ -7,4 +7,4 @@ before_install:
   - docker build -t holhas/docker-travis-aws-simple -f Dockerfile.dev .
 
 script:
-  - docker run holhas/docker-travis-aws-simple npm run test -- --coverage
+  - docker run -e CI=true holhas/docker-travis-aws-simple npm run test -- --coverage --watchAll=false
